@@ -1,0 +1,18 @@
+.grid{
+   background-color:white;
+   border: 1px solid red;
+    
+}
+body{
+  
+}
+.Agrid{
+  display: grid;
+  grid-template-columns: repeat(20, auto);
+  border: 2px solid black;
+
+}
+
+.grid:hover{
+  background-color: black;
+}
