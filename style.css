@@ -1,6 +1,4 @@
 .grid{
-   background-color:white;
-   border: 1px solid red;
    
     
 }
@@ -8,6 +6,8 @@ body{
   
 }
 .Agrid{
+  height: 600px;
+  width: 600px; 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(auto,1fr);
