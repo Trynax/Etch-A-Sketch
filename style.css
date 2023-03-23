@@ -1,6 +1,7 @@
 .grid{
    background-color:white;
    border: 1px solid red;
+   
     
 }
 body{
@@ -8,11 +9,12 @@ body{
 }
 .Agrid{
   display: grid;
-  grid-template-columns: repeat(20, auto);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(auto,1fr);
   border: 2px solid black;
-
 }
 
 .grid:hover{
   background-color: black;
+  
 }

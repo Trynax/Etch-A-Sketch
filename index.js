@@ -4,7 +4,7 @@ let gridSize = height
 document.body.appendChild(Agrid)
 Agrid.classList.add('Agrid')
 console.log(gridSize);
-Agrid.style.cssText= 'display: flex; border: 2px solid black;'
+Agrid.style.cssText= 'display: grid; border: 2px solid black;'
 
 for (let i=0; i<100; i++){
   let grid = document.createElement('div')
