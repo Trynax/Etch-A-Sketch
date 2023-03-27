@@ -1,20 +1,24 @@
-.grid{
-   
-    
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-  
+/*
+h1{
+  height: 1px;
+  background-color: black;
+  margin-top: 300px;
+  width: 512px;
 }
-.Agrid{
-  height: 600px;
-  width: 600px; 
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(auto,1fr);
-  border: 2px solid black;
+*/
+
+.container{
+ width:500px;
+ border: 1px solid black;
+ height:500px;
+ display: grid;
+ text-align: center;
 }
 
-.grid:hover{
-  background-color: black;
-  
+.grid{
+  border: 1px solid black ;
 }
