@@ -5,20 +5,19 @@ let colorChoice = '#000000'
 let TgridSize = gridSize*gridSize;
 gridsContainer.classList.add('container')
 gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
-for(let i = 0; i<TgridSize; i++){
-   let grid = document.createElement("div")
-   gridsContainer.appendChild(grid)
-   grid.classList.add('grid')
-
+function createGrid() {
+   for(let i = 0; i<TgridSize; i++){
+      let grid = document.createElement("div")
+      gridsContainer.appendChild(grid)
+      grid.classList.add('grid')
+   
+   }
 }
+createGrid()
 
 let grids = document.querySelectorAll('.grid')
-for (let grid of grids){
-   grid.addEventListener('mouseenter', function (){
-      this.style.backgroundColor=`${colorChoice}`
-   })
-}
 
+pixelated()
 function reset() {
    for(let i=0; i<TgridSize; i++){
       grids[i].style.backgroundColor='white'
@@ -26,15 +25,24 @@ function reset() {
 }
 
  function selectGridSize(){
+   pixelated()
    gridSize = parseInt(prompt("Select grid size,less than 100", 50))
-   let grids = document.querySelectorAll('.grid');
-  for(let i=0; i<grids.length; i++){
-    grids[i].style.backgroundColor = `white`;
-  }
-  gridsContainer.style.cssText=`margin:0;grid-template-columns: repeat(${gridSize}},1fr);grid-template-rows: repeat(${gridSize},1fr);`
+   TgridSize= gridSize*gridSize
+   gridsContainer.innerHTML="";
+   gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
+  createGrid()
+  pixelated()
  }
 
  let colorInput = document.getElementById('change')
  colorInput.addEventListener('input', function(){
    colorChoice=colorInput.value
  })
+
+ function pixelated() {
+   for (let grid of grids){
+      grid.addEventListener('mouseenter', function (){
+         this.style.backgroundColor=`${colorChoice}`
+      })
+   }   
+}
