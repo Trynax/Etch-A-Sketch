@@ -13,8 +13,9 @@ h1{
 
 .container{
   margin: 200px;
+  margin-top: 50px;
  width:500px;
- border: 1px solid black;
+ border: 20px solid blue;
  height:500px;
  display: grid;
  text-align: center;
@@ -22,4 +23,43 @@ h1{
 
 .grid{
   border: 1px solid black ;
+}
+
+.design{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reset{
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: aqua;
+  border: none;
+  margin-right: 15px;
+}
+
+.reset:hover{
+  scale: 1.1;
+}
+.select{
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  border: none;
+  margin-right: 15px;
+}
+
+.select:hover{
+  scale: 1.1;
+}
+
+.reset:active{
+  scale: .9;
+}
+.select:active{
+  scale: .9;
+}
+label{
+  font-size: 20px;
+  font-weight: 700;
 }

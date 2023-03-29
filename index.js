@@ -30,7 +30,7 @@ function reset() {
 }
 
  function selectGridSize(){
-   gridSize = parseInt(prompt("Select grid size,less than 100", 10))
+   gridSize = parseInt(prompt("Enter a new grid size between 1 and 100 units:", 10))
    if(gridSize>100){
       gridSize =1;
    }
