@@ -6,6 +6,7 @@ let TgridSize = gridSize*gridSize;
 gridsContainer.classList.add('container')
 gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
 function createGrid() {
+
    for(let i = 0; i<TgridSize; i++){
       let grid = document.createElement("div")
       gridsContainer.appendChild(grid)
@@ -14,18 +15,13 @@ function createGrid() {
    }
 }
 createGrid()
-
-
-function pixelated() {
    let grids = document.querySelectorAll('.grid')
    for (let grid of grids){
       grid.addEventListener('mouseenter', function (){
-         this.style.backgroundColor=`${colorChoice}`
+         grid.style.backgroundColor=`${colorChoice}`
       })
    }   
 
-}
-   
 function reset() {
    let grids = document.querySelectorAll('.grid')
    for(let i=0; i<TgridSize; i++){
@@ -35,11 +31,20 @@ function reset() {
 
  function selectGridSize(){
    gridSize = parseInt(prompt("Select grid size,less than 100", 10))
+   if(gridSize>100){
+      gridSize =1;
+   }
    TgridSize= gridSize*gridSize
   gridsContainer.innerHTML="";
    gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
-  createGrid()
-  pixelated()
+  
+   createGrid()
+   let grids = document.querySelectorAll('.grid')
+   for (let grid of grids){
+      grid.addEventListener('mouseenter', function (){
+         grid.style.backgroundColor=`${colorChoice}`
+      })
+   }   
  }
 
  let colorInput = document.getElementById('change')
@@ -47,4 +52,4 @@ function reset() {
    colorChoice=colorInput.value
  })
 
- pixelated()
+ 
