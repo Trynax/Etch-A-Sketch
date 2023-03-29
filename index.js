@@ -32,7 +32,7 @@ function reset() {
  function selectGridSize(){
    gridSize = parseInt(prompt("Enter a new grid size between 1 and 100 units:", 10))
    if(gridSize>100){
-      gridSize =1;
+      gridSize =null;
    }
    TgridSize= gridSize*gridSize
   gridsContainer.innerHTML="";
