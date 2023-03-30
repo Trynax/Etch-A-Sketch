@@ -40,7 +40,6 @@ function reset() {
       TgridSize= gridSize*gridSize
       gridsContainer.innerHTML="";
        gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
-       console.log(gridSize);
        createGrid()
      } else{
       {}
