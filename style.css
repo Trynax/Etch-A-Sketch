@@ -55,6 +55,7 @@ h1{
 
 .reset:active{
   scale: .9;
+  border: none;
 }
 .select:active{
   scale: .9;

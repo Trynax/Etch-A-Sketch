@@ -31,9 +31,10 @@ function reset() {
 
  function selectGridSize(){
    gridSize = parseInt(prompt("Enter a new grid size between 1 and 100 units:", 10))
-   if(gridSize>100){
-      gridSize =null;
+   while (gridSize>100|| gridSize<1) {
+     gridSize= parseInt(prompt("Please enter a valid grid size between 1 and 100 units:", 10))
    }
+  
    TgridSize= gridSize*gridSize
   gridsContainer.innerHTML="";
    gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
@@ -51,5 +52,6 @@ function reset() {
  colorInput.addEventListener('input', function(){
    colorChoice=colorInput.value
  })
+
 
  
