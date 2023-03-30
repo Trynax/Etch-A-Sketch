@@ -36,18 +36,19 @@ function reset() {
 
  function selectGridSize(){
    gridSize = parseInt(prompt("Enter a new grid size between 1 and 100 units:", 10))
-   if (gridSize===null||gridSize===NaN) {
-      gridSize=16;
+   if (gridSize!==null&& !isNaN(gridSize)) {
+      TgridSize= gridSize*gridSize
+      gridsContainer.innerHTML="";
+       gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
+       console.log(gridSize);
+       createGrid()
+     } else{
+      {}
      }
    while (gridSize>100|| gridSize<1) {
      gridSize= parseInt(prompt("Please enter a valid grid size between 1 and 100 units:", 10))
    }
  
-   TgridSize= gridSize*gridSize
-  gridsContainer.innerHTML="";
-   gridsContainer.style.cssText=`grid-template-columns: repeat(${gridSize},1fr);grid-template-rows: repeat(${gridSize},1fr);`
-   console.log(gridSize);
-   createGrid()
    trials() 
  }
 
